@@ -23,12 +23,11 @@ public class IntDoubleList {
 
         if(head == null){
             head = newElement;
-            tail = newElement;
         }else{
             tail.next = newElement;
             newElement.prev = tail;
-            tail = newElement;
         }
+        tail = newElement;
     }
     public int size(){
         IntDoubleListElement temp = head;
@@ -48,7 +47,9 @@ public class IntDoubleList {
         IntDoubleListElement temp = head;
 
 
-        for (int i = 0; i < pos; i++, temp = temp.next);
+        for (int i = 0; i < pos; i++){
+            temp = temp.next;
+        }
 
         return temp.getInfo();
     }
@@ -57,7 +58,7 @@ public class IntDoubleList {
         IntDoubleListElement temp = head;
         // if pos > size, report error
         if (this.size() <= pos || pos < 0) {
-            System.out.println("Position ist groesser als Liste!");
+            System.out.println("ups");
             // if pos==0, update head
         } else if (pos == 0) {
             head = head.next;

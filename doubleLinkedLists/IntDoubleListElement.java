@@ -22,6 +22,6 @@ public class IntDoubleListElement {
         prev = null;
     }
     public boolean isEqual(IntDoubleListElement other){
-        return other != null && info == other.info;
+        return other != null && this.info == other.info;
     }
 }
